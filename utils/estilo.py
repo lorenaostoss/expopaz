@@ -14,7 +14,7 @@ TIPO_COLOR = {
 }
 
 TITULO = "Expopaz: Proyectos de investigación cualitativa con impacto social desde el aula"
-SUBTITULO = "Departamento de Estudios Sociales, Políticos y Culturales"
+SUBTITULO = "Facultad de Ciencias del Comportamiento: Departamento de Estudios Sociales, Políticos y Culturales"
 AUTORAS = ["Lorena Ostos", "Catalina Troncoso"]
 PROFESORES = ["Pilar Baracaldo", "Laura Fonseca", "Mónica González", "Carlos Monroy", "Camilo Rincón"]
 

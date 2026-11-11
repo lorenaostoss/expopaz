@@ -16,7 +16,7 @@ TIPO_COLOR = {
 TITULO = "Expopaz: Proyectos de investigación cualitativa con impacto social desde el aula"
 SUBTITULO = "Departamento de Estudios Sociales, Políticos y Culturales"
 AUTORAS = ["Lorena Ostos", "Catalina Troncoso"]
-ASESORES = ["Pilar Baracaldo", "Laura Fonseca", "Mónica González", "Carlos Monroy", "Camilo Rincón"]
+PROFESORES = ["Pilar Baracaldo", "Laura Fonseca", "Mónica González", "Carlos Monroy", "Camilo Rincón"]
 
 QUE_ES = ("EXPOPAZ es una feria académica que reúne los proyectos desarrollados por estudiantes de "
           "Investigación Cualitativa y Psicología Social. La feria celebra el trabajo y los aprendizajes "
@@ -48,8 +48,8 @@ html, body, [class*="css"], .stApp {{ font-family: 'Inter', sans-serif; }}
 .eyebrow {{ font-size: 1rem; font-weight: 700; letter-spacing: 6px; color: {AMBAR}; margin-bottom: .5rem; }}
 .hero h1 {{ margin: 0; padding: 0; font-size: 2.2rem; font-weight: 800; letter-spacing: -.5px; line-height: 1.2; max-width: 820px; color: #fff; }}
 .subt {{ margin: .6rem 0 0; font-size: 1.2rem; font-weight: 600; color: {AMBAR}; }}
-.names {{ margin: 1rem 0 0; font-size: 1.02rem; color: #fff; }}
-.names.asesores {{ margin-top: .35rem; font-size: .95rem; color: #D9DCF0; }}
+.names {{ margin: 1rem 0 0; font-size: .98rem; color: #fff; }}
+.names.autoras {{ margin-top: .35rem; }}
 .chips {{ display: flex; flex-wrap: wrap; gap: 14px; }}
 .chip {{ background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); border-radius: 16px; padding: .8rem 1.3rem; min-width: 140px; }}
 .chip b {{ display: block; font-size: 1.7rem; font-weight: 800; line-height: 1.15; }}
@@ -105,14 +105,14 @@ def encabezado(chips):
     """Barra azul grande con el título, las autoras y tres cifras clave."""
     ch = "".join(f'<div class="chip"><b>{escape(str(a))}</b><span>{escape(str(b))}</span></div>' for a, b in chips)
     autoras = " &nbsp;·&nbsp; ".join(f"<b>{escape(n)}</b>" for n in AUTORAS)
-    asesores = " &nbsp;·&nbsp; ".join(escape(n) for n in ASESORES)
+    profesores = " &nbsp;·&nbsp; ".join(escape(n) for n in PROFESORES)
     franja = "".join(f'<div style="background:{c}"></div>' for c in (NARANJA, AMBAR, LILA, VERDE))
     st.markdown(
         f'<div class="hero"><div class="c1"></div><div class="c2"></div><div class="c3"></div>'
         f'<div class="hero-in"><div><h1>{escape(TITULO)}</h1>'
         f'<p class="subt">{escape(SUBTITULO)}</p>'
-        f'<p class="names">Autoras: {autoras}</p>'
-        f'<p class="names asesores">Asesores: {asesores}</p></div><div class="chips">{ch}</div></div>'
+        f'<p class="names">Profesores a cargo: {profesores}</p>'
+        f'<p class="names autoras">Autoras: {autoras}</p></div><div class="chips">{ch}</div></div>'
         f'<div class="strip">{franja}</div></div>',
         unsafe_allow_html=True)
 
